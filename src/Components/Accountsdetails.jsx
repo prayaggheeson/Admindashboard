@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 const Accountsdetails = () => {
   const today = new Date();
   const [walletAddress, setWalletAddress] = useState("");
@@ -48,7 +47,9 @@ const Accountsdetails = () => {
       <div className="flex flex-wrap ">
         <div className="w-full sm:w-1/2 md:w-1/3">
           <div className="p-4 rounded-full justify-center hover:bg-blue-300">
-            <h2>{walletAddress ? walletAddress : "Not Connected"}</h2>
+            <h2 className="text-xl font-semibold">
+              {walletAddress ?` ${walletAddress.substring(0, 15)}...` : "Not Connected"}
+            </h2>
           </div>
         </div>
         <div className="w-full sm:w-1/2 md:w-1/3 mb-4 sm:mb-0">
